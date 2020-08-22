@@ -15,8 +15,8 @@
 
     org song_on_screen
 
-    .sb "  Chordian                              "
-    .sb "  by Jens-Christian Huus                "
-    .sb "  1991 Vibrants                         "
+    .sb "  Chordian by Jens-Christian Huus       "
+    .sb "  (c)1991 Vibrants                      "
+    .sb "  atarisid conversion 2020-08-22        "
 
 
