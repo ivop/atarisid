@@ -24,7 +24,7 @@ static const int VOL[3]  = { (SILENCE+AMPLITUDE1) - (SILENCE-AMPLITUDE1),
                              (SILENCE+AMPLITUDE3) - (SILENCE-AMPLITUDE3)    };
 
 static int tri[3][512], saw[3][512], sawtri[3][512], noise[3][256];
-static int pulse[4][3][256], silence[256], mixforms;
+static int pulse[4][3][256], silence[256], mixforms, experimental;
 
 static void print(int *a, char *s) {
     int i, j;
@@ -46,12 +46,17 @@ int main(int argc, char **argv) {
     int i, j, k;
 
     if (argc!=2) {
+usage:
         fprintf(stderr, "specify 0 (small) or 1 (mixforms)\n");
+        fprintf(stderr, "specify 2 for experimental waveforms\n");
         exit(1);
     }
 
-    if (atol(argv[1]) == 1) mixforms = 1;
+    if (atol(argv[1]) == 1)         mixforms = 1;
+    else if (atol(argv[1]) == 2)    experimental = 1;
+    else if (atol(argv[1]) >  2)    goto usage;
 
+  if (!experimental) {              // NORMAL SID
     for(i=0; i<256; i++) {
         silence[i]= SILENCE;
 
@@ -64,6 +69,20 @@ int main(int argc, char **argv) {
             noise[k][i] = 0x82 + k*2 - 0x10; // compensate for vol only bit
         }
     }
+  } else {                          // EXPERIMENTAL WAVEFORMS
+    for(i=0; i<256; i++) {
+        silence[i]= SILENCE;
+
+        for (k=0; k<3; k++) {
+            tri[k][i]= BASE[k] + round((i/255.0f)*VOL[k]);
+            saw[k][i]= BASE[k] + round(i<128? (i/127.0f)*VOL[k]
+                                            :((255-i)/127.0f)*VOL[k]);
+            sawtri[k][i]=(saw[k][i]+tri[k][i])/2;
+            tri[k][256+i]= saw[k][256+i]= sawtri[k][256+i]= BASE[k];
+            noise[k][i] = 0x82 + k*2 - 0x10; // compensate for vol only bit
+        }
+    }
+  }
 
     for(j=0; j<4; j++) {
         for(i=0; i<256; i++) {

@@ -46,10 +46,17 @@ decompressed = $4400
 compressed
     icl "compressed-mixforms.inc"
 .else
+    .ifdef experimental
 decompressed = $2600
-    org $3c00
+        org $3c00
 compressed
-    icl "compressed-nomixforms.inc"
+        icl "compressed-experimental-nomixforms.inc"
+    .else
+decompressed = $2600
+        org $3c00
+compressed
+        icl "compressed-nomixforms.inc"
+    .endif
 .endif
 
     icl "init.inc"
