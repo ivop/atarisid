@@ -126,12 +126,12 @@ copypz
     mva #$00 AUDF2
     mva #$00 AUDF4
 
-    ldy #$03
-    lda #$05+7
+    ldy #3
+;;    lda #12
+    lda #5
     sty AUDF1
     sta AUDF3
 
-    mva #0 SKCTL
     lda #0
     sta $d40a
     sta $d40a
@@ -139,8 +139,7 @@ copypz
     dex:rne
     sta SKCTL
     sta STIMER
-    lda #1
-    sta SKCTL
+    mva #3 SKCTL
     sty AUDF3
 
     mwa #irq1 $fffe
