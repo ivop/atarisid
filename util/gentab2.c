@@ -86,7 +86,8 @@ usage:
 
     for(j=0; j<4; j++) {
         for(i=0; i<256; i++) {
-            if (i<(j+1)*32) {
+//            if (i<(j+1)*32) {
+            if (i<(j+1)*24) {           // not to full 50%, compromise
                 pulse[j][0][i] = SILENCE + AMPLITUDE1;
                 pulse[j][1][i] = SILENCE + AMPLITUDE2;
                 pulse[j][2][i] = SILENCE + AMPLITUDE3;

@@ -147,7 +147,7 @@ noiseLUT
 ;    .endif
 
 noiseLUT2
-    .by $80, $82, $83, $84
+    .by $80, $81, $82, $83
 
 ; TABLE to lookup the highbyte of each wave form
 ; array[wavetriplet][pulsewidth][volume]     (  [8][4][4]  )
