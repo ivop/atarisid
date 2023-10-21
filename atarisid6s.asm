@@ -28,7 +28,7 @@ disable_basic
 
 ; ----------------------------------------------------------------------------
 
-    icl "songs/zybex.inc"
+    icl "songs/syncopated.inc"
 
 ; ----------------------------------------------------------------------------
 
@@ -114,16 +114,34 @@ copypz
 
 ; timer
 
-    mva #1 AUDCTL
-    mva #1 IRQEN
+    mva #$65 AUDCTL
+    mva #0 IRQEN
+    mva #4 IRQEN
 
-    mva #$00 AUDF1
+    mva #$af AUDC1
+    mva #$10 AUDC2
+    mva #$a0 AUDC3
+    mva #$10 AUDC4
 
     mva #$00 AUDF2
-    mva #$00 AUDF3
     mva #$00 AUDF4
 
+    ldy #$03
+    lda #$05+7
+    sty AUDF1
+    sta AUDF3
+
+    mva #0 SKCTL
+    lda #0
+    sta $d40a
+    sta $d40a
+    ldx #19
+    dex:rne
+    sta SKCTL
     sta STIMER
+    lda #1
+    sta SKCTL
+    sty AUDF3
 
     mwa #irq1 $fffe
     cli
@@ -169,6 +187,7 @@ no_key
     copy_shadow_sid_to_shadow_voice 2
     copy_shadow_sid_to_shadow_voice 3
 
+    mva #0 AUDC2
     adjust_noise 1
     adjust_noise 2
     adjust_noise 3
@@ -219,6 +238,13 @@ check_all_test_bits
     rts
 
 ; ----------------------------------------------------------------------------
+
+    .align $0100
+
+lotab
+:256    dta [#&15]+$a0
+hitab
+:256    dta [#/16]+$10
 
     .align $0100
 tempzp

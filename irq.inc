@@ -3,25 +3,14 @@ irq1
     sta saveA1
     sty saveY1
 
-    clc
+;    clc
 
-    ldy count_msb_v1
-table_lsb_v1_i1=*+1
-table_msb_v1_i1=*+2
-    lda $1000,y
-    sta AUDC2
-
-    ldy count_msb_v2
-table_lsb_v2_i3=*+1
-table_msb_v2_i3=*+2
-    lda $1000,y
-    sta AUDC3
-
-    ldy count_msb_v3
-table_lsb_v3_i2=*+1
-table_msb_v3_i2=*+2
-    lda $1000,y
-    sta AUDC4
+loval1=*+1
+    lda lotab
+hival1=*+1
+    ldy hitab
+    sta AUDC1
+    sty AUDC3
 
 count_lsb_v2=*+1
     lda #0
@@ -30,9 +19,33 @@ freq_lsb_v2=*+1
     sta count_lsb_v2
 count_msb_v2=*+1
     lda #0
+    tay
 freq_msb_v2=*+1
     adc #0
     sta count_msb_v2
+
+;    ldy count_msb_v2
+table_lsb_v2_i3=*+1
+table_msb_v2_i3=*+2
+    lda $1000,y
+;    sta AUDC3
+
+    ldy count_msb_v3
+table_lsb_v3_i2=*+1
+table_msb_v3_i2=*+2
+    adc $1000,y
+;    lda $1000,y
+;    sta AUDC4
+
+    ldy count_msb_v1
+table_lsb_v1_i1=*+1
+table_msb_v1_i1=*+2
+    adc $1000,y
+;    lda $1000,y
+;    sta AUDC2
+
+    sta loval2
+    sta hival2
 
     mva #irq2 $fffe
 
@@ -49,25 +62,14 @@ irq2
     sta saveA2
     sty saveY2
 
-    clc
+;    clc
 
-    ldy count_msb_v1
-table_lsb_v1_i2=*+1
-table_msb_v1_i2=*+2
-    lda $1000,y
-    sta AUDC2
-
-    ldy count_msb_v2
-table_lsb_v2_i1=*+1
-table_msb_v2_i1=*+2
-    lda $1000,y
-    sta AUDC3
-
-    ldy count_msb_v3
-table_lsb_v3_i3=*+1
-table_msb_v3_i3=*+2
-    lda $1000,y
-    sta AUDC4
+loval2=*+1
+    lda lotab
+hival2=*+1
+    ldy hitab
+    sta AUDC1
+    sty AUDC3
 
 count_lsb_v3=*+1
     lda #0
@@ -76,9 +78,33 @@ freq_lsb_v3=*+1
     sta count_lsb_v3
 count_msb_v3=*+1
     lda #0
+    tay
 freq_msb_v3=*+1
     adc #0
     sta count_msb_v3
+
+;    ldy count_msb_v3
+table_lsb_v3_i3=*+1
+table_msb_v3_i3=*+2
+    lda $1000,y
+;    sta AUDC4
+
+    ldy count_msb_v1
+table_lsb_v1_i2=*+1
+table_msb_v1_i2=*+2
+    adc $1000,y
+;    lda $1000,y
+;    sta AUDC2
+
+    ldy count_msb_v2
+table_lsb_v2_i1=*+1
+table_msb_v2_i1=*+2
+    adc $1000,y
+;    lda $1000,y
+;    sta AUDC3
+
+    sta loval3
+    sta hival3
 
     mva #irq3 $fffe
 
@@ -95,25 +121,14 @@ irq3
     sta saveA3
     sty saveY3
 
-    clc
+;    clc
 
-    ldy count_msb_v1
-table_lsb_v1_i3=*+1
-table_msb_v1_i3=*+2
-    lda $1000,y
-    sta AUDC2
-
-    ldy count_msb_v2
-table_lsb_v2_i2=*+1
-table_msb_v2_i2=*+2
-    lda $1000,y
-    sta AUDC3
-
-    ldy count_msb_v3
-table_lsb_v3_i1=*+1
-table_msb_v3_i1=*+2
-    lda $1000,y
-    sta AUDC4
+loval3=*+1
+    lda lotab
+hival3=*+1
+    ldy hitab
+    sta AUDC1
+    sty AUDC3
 
 count_lsb_v1=*+1
     lda #0
@@ -122,9 +137,33 @@ freq_lsb_v1=*+1
     sta count_lsb_v1
 count_msb_v1=*+1
     lda #0
+    tay
 freq_msb_v1=*+1
     adc #0
     sta count_msb_v1
+
+;    ldy count_msb_v1
+table_lsb_v1_i3=*+1
+table_msb_v1_i3=*+2
+    lda $1000,y
+;    sta AUDC2
+
+    ldy count_msb_v2
+table_lsb_v2_i2=*+1
+table_msb_v2_i2=*+2
+    adc $1000,y
+;    lda $1000,y
+;    sta AUDC3
+
+    ldy count_msb_v3
+table_lsb_v3_i1=*+1
+table_msb_v3_i1=*+2
+    adc $1000,y
+;    lda $1000,y
+;    sta AUDC4
+
+    sta loval1
+    sta hival1
 
     mva #irq1 $fffe
 

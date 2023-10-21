@@ -51,6 +51,7 @@
 
     ldx volume_v:1
     mva noiseLUT,x shadow_table_msb_v:1
+    mva noiseLUT2,x AUDC2
 
     lda SIDV:1FREQHI
     cmp #$30
@@ -70,7 +71,8 @@ setfzero
     lda #0
 
 setf
-    sta AUDF:1
+;;    sta AUDF:1
+    sta AUDF2
 
 nonoise
     .endm

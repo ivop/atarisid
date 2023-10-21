@@ -139,11 +139,15 @@ pst75_vol_10 = silence + $6400
 pst75_vol_11 = silence + $6600
 
 noiseLUT
-    .ifdef softernoise
-        .by +(>silence) $00, $0e, $0e, $10
-    .else
-        .by +(>silence) $00, $0e, $10, $12
-    .endif
+    .by +(>silence) 0,0,0,0 ; silent noise
+;    .ifdef softernoise
+;        .by +(>silence) $00, $0e, $0e, $10
+;    .else
+;        .by +(>silence) $00, $0e, $10, $12
+;    .endif
+
+noiseLUT2
+    .by $80, $82, $83, $84
 
 ; TABLE to lookup the highbyte of each wave form
 ; array[wavetriplet][pulsewidth][volume]     (  [8][4][4]  )

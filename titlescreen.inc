@@ -25,9 +25,9 @@ dlist
     dta 65, a(dlist)
 
 screendata
-    .sb "       ATARI SID 6.1"
+    .sb "       ATARI SID 7.0"
     .sb "                      by Ivo van Poorten"
-    .sb "                       (C) 2012-2016 TGK"
+    .sb "                  (C) 2012-2016,2023 TGK"
 
     .sb "    Use CONSOLE keys to select songs    "
     .sb "  when more than one song is available  "

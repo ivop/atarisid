@@ -1,3 +1,3 @@
 #! /bin/sh
 
-mads -o:a.xex atarisid6s.asm
+mads -t:a.lab -o:a.xex atarisid6s.asm
