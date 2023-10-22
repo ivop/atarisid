@@ -18,4 +18,4 @@
 
     .sb " Dose of D by Mitch & Dane              "
     .sb " 1995 Crest                             "
-    .sb " atarisid6 conversion at 2021-10-30     "
+    .sb " atarisid conversion at 2021-10-30      "
