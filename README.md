@@ -11,3 +11,7 @@ Both utilize the original C64 player routines that have been modified to write t
 v7 sounds better, but might miss some noise here and there. v6 switches between wave synthesis and Pokey's own noise generator on each channel. v7 uses only a single spare channel to play noise. The other three are taken. Two for the 8-bit PCM4+4 channel, and one for the 50Hz timer to sync the replay routine. So if more than one player uses noise, only one is played. In practice this has not been a real problem so far.
 
 Note on emulation: the only Atari 8-bit emulator that runs both players correctly is Altirra. atari800 has an incomplete Pokey emulation. v6 sort of works, even though the interrupts fire at the wrong time. Best enjoyed on real hardware ;)
+
+# credits
+
+All code is Copyright (C) 2012-2016,2023 by Ivo van Poorten. Licensed under the terms of the General Public License version 3. Not any later.
