@@ -1,0 +1,3 @@
+
+sidreloc -p 90 -z d0-ef -r 10-1f in.sid out.sid
+
