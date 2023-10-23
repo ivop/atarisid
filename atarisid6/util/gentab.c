@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#if 1
+#if 0
 // 0 1 2 3 4 5 [6] 7 8 9 10 11 12       distorts? max. 36
 #define SILENCE     6
 #define AMPLITUDE1  2
@@ -86,7 +86,8 @@ usage:
 
     for(j=0; j<4; j++) {
         for(i=0; i<256; i++) {
-            if (i<(j+1)*32) {
+//            if (i<(j+1)*32) {
+            if (i<(j+1)*24) {
                 pulse[j][0][i] = SILENCE + AMPLITUDE1;
                 pulse[j][1][i] = SILENCE + AMPLITUDE2;
                 pulse[j][2][i] = SILENCE + AMPLITUDE3;

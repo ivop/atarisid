@@ -220,6 +220,14 @@ check_all_test_bits
 
 ; ----------------------------------------------------------------------------
 
+; better pulse width handling 0-12 increases to 50% duty, mirror after that
+; we do not invert the waveform as it is on a real sid
+
+pwtab
+    dta 0, 4, 8, 12, 12, 8, 4, 0
+
+; ----------------------------------------------------------------------------
+
     .align $0100
 tempzp
 

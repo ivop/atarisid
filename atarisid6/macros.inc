@@ -20,7 +20,10 @@
     and #$70
     sta temp1
     lda SIDV:1PWHI
-    and #$0c
+    and #8+4+2
+    lsr
+    tax
+    lda pwtab,x
     ora temp1
     ora volume_v:1
     tax
