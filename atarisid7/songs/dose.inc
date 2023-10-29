@@ -16,6 +16,6 @@
 
     org song_on_screen
 
-    .sb " Dose of D by Mitch & Dane              "
-    .sb " 1995 Crest                             "
-    .sb " atarisid conversion at 2021-10-30      "
+    .sb "  Dose of D by Mitch & Dane             "
+    .sb "  1995 Crest                            "
+    .sb "  atarisid conversion at 2021-10-30     "

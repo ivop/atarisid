@@ -15,6 +15,6 @@
 
     org song_on_screen
 
-    .sb " End by Mitch & Dane                    "
-    .sb " 2002 Crest                             "
-    .sb " atarisid conversion at 2021-10-30      "
+    .sb "  End by Mitch & Dane                   "
+    .sb "  2002 Crest                            "
+    .sb "  atarisid conversion at 2021-10-30     "

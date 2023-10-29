@@ -16,6 +16,6 @@
 
     org song_on_screen
 
-    .sb " Hit Trip by Mitch & Dane               "
-    .sb " 1995 Crest                             "
-    .sb " atarisid conversion at 2021-10-30      "
+    .sb "  Hit Trip by Mitch & Dane              "
+    .sb "  1995 Crest                            "
+    .sb "  atarisid conversion at 2021-10-30     "

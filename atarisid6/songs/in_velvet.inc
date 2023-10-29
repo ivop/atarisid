@@ -16,6 +16,6 @@
 
     org song_on_screen
 
-    .sb " In Velvet by Mitch & Dane              "
-    .sb " 1997 Crest                             "
-    .sb " atarisid conversion at 2021-10-31      "
+    .sb "  In Velvet by Mitch & Dane             "
+    .sb "  1997 Crest                            "
+    .sb "  atarisid conversion at 2021-10-31     "

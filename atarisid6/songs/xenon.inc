@@ -15,8 +15,8 @@
 
     org song_on_screen
 
-    .sb " Xenon by David Whittaker, 1988         "
-    .sb " C64 SID version by Paul Tonge, 1989    "
-    .sb " atarisid conversion at 2021-06-08      "
+    .sb "  Xenon by David Whittaker, 1988        "
+    .sb "  C64 SID version by Paul Tonge, 1989   "
+    .sb "  atarisid conversion at 2021-06-08     "
 
 

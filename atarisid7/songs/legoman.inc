@@ -16,6 +16,6 @@
 
     org song_on_screen
 
-    .sb " Legoman by Mitch & Dane                "
-    .sb " 1995 Crest                             "
-    .sb " atarisid conversion at 2021-10-31      "
+    .sb "  Legoman by Mitch & Dane               "
+    .sb "  1995 Crest                            "
+    .sb "  atarisid conversion at 2021-10-31     "

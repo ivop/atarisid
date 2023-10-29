@@ -15,6 +15,6 @@
 
     org song_on_screen
 
-    .sb " Archangel by Mitch & Dane              "
-    .sb " 1995 Crest                             "
-    .sb " atarisid conversion at 2021-10-27      "
+    .sb "  Archangel by Mitch & Dane             "
+    .sb "  1995 Crest                            "
+    .sb "  atarisid conversion at 2021-10-27     "

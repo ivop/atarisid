@@ -17,6 +17,6 @@
 
     org song_on_screen
 
-    .sb " Zero by Stellan Andersson (Dane)       "
-    .sb " 2015 Booze Design                      "
-    .sb " atarisid conversion at 2021-10-26      "
+    .sb "  Zero by Stellan Andersson (Dane)      "
+    .sb "  2015 Booze Design                     "
+    .sb "  atarisid conversion at 2021-10-26     "
