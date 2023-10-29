@@ -170,7 +170,29 @@ loop                        ;;;; MAIN LOOP ;;;;
     beq new_song
 
 no_key
+
+; For NTSC we assume that the C64 player takes more than 52 scan lines so
+; we have to wait for just one vcount value to sync. We choose add 26
+; each time as 5*26=130 (one time we actually wait 27 counts of vcount
+; because it counts to 130, including 130 (131 counts, 262 scan lines)
+
+.ifdef NTSC
+    lda scanline: #0
+wait
+    cmp VCOUNT
+    bne wait
+
+    clc
+    adc #26
+    cmp #130
+    bne no130
+
+    lda #0
+no130
+    sta scanline
+.else
     lda:rne VCOUNT
+.endif
 
 ;    mva #255 COLBK
 
