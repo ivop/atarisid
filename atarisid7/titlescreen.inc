@@ -25,7 +25,7 @@ dlist
     dta 65, a(dlist)
 
 screendata
-    .sb "       ATARI SID 7.0"
+    .sb "       ATARI SID 7.1"
     .sb "                      by Ivo van Poorten"
 .ifdef NTSC
     .sb "  (NTSC)"

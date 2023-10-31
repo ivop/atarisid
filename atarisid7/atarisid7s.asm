@@ -139,7 +139,7 @@ copypz
     dex:rne
     sta SKCTL
     sta STIMER
-    mva #3 SKCTL
+    sty SKCTL
     sty AUDF3
 
     mwa #irq1 $fffe
